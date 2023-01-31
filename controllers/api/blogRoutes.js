@@ -1,4 +1,4 @@
-//create blog
+//create a blog
 const router = require('express').Router();
 const { blog } = require('../../models');
 const withAuth = require('../../utils/auth');

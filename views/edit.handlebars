@@ -1,0 +1,33 @@
+
+<article>
+    <a href="/dashboard">&larr; Back to Dashboard</a>
+    <h2>Edit Blog</h2>
+    <form class="edit-blog-form">
+        <div>
+            <input type="text" name="blog-title" value="{{blog.title}}" />
+            <br><br>
+            <textarea id="blog-text" name="blog-text"></textarea>
+            <p>{{blog.blog_text}}</p>
+        </div>
+        <div>
+            <a href="/blog/{{blog.id}}">{{blog.comments.length}} {{format_plural "comment" blog.comments.length}}</a>
+        </div>
+        <button type="submit">Save</button>
+        <button type="button" class="delete-blog-btn">Delete</button>
+    </form>
+</article>
+
+<form class="comment-form">
+    <div>
+        <textarea name="comment-body"></textarea>
+    </div>
+    <div>
+        <button type="submit"> Submit</button>
+    </div>
+</form>
+
+{{> comments blog.comments}}
+
+<script src="/TechBlog_MVC/public/js/editBlog.js"></script>
+<script src="/TechBlog_MVC/public/js/deleteBlog.js"></script>
+<script src="/TechBlog_MVC/public/js/comment.js"></script>

@@ -1,0 +1,12 @@
+[
+  {
+    "title": "SQL",
+    "blog_text": "MySQL is a popular, time-tested, but also modern and fully-featured relational database management software." ,
+    "user_id": 1
+  },
+  {
+    "title": "MVC",
+    "blog_text": "MVC is an acronym for Model-View-Controller. It is a design pattern for software projects. It is used majorly by Node developers and by C#, Ruby, PHP framework users too." ,
+    "user_id": 2
+  }
+]

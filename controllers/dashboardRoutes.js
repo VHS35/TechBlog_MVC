@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection');
+// const sequelize = require('../config/connection');
 const { Blog, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
@@ -29,8 +29,8 @@ router.get('/', withAuth, (req, res) => {
       }
     ]
   })
-    .then(postData => {
-      const posts = blogData.map(post => blog.get({ plain: true }));
+    .then(blogData => {
+      const blogs = blogData.map(blog => blog.get({ plain: true }));
       res.render('dashboard', { blogs, loggedIn: true, username: req.session.username });
     })
     .catch(err => {
@@ -64,10 +64,10 @@ router.get('/edit/:id', withAuth, (req, res) => {
   })
     .then(blogData => {
       if (blogData) {
-        const post = blogData.get({ plain: true });
+        const blog = blogData.get({ plain: true });
         
         res.render('edit-blog', {
-          post,
+          blog,
           loggedIn: true,
           username: req.session.username
         });
